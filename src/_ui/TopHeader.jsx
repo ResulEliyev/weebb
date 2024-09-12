@@ -1,12 +1,12 @@
 import Container from "../_components/Container";
-import { DownIcon, LocationIcon, PhoneIcon } from "../../public/Icons";
+import {  LocationIcon, PhoneIcon } from "../../public/Icons";
 import Flex from "../_components/Flex";
 import TopHeaderList from "../HelpersUi/TopHeaderList";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import MoneyHover from "../_components/Hovers/MoneyHover";
+import "./respons/topHeader.css"
 
 export default () => {
-  const [isHovered, setIsHovered] = useState();
   const info = [
     {
       label: "(+994) 51-660-24-21",
@@ -36,34 +36,9 @@ export default () => {
           ))}
         </Flex>
 
-        <Flex gap={10} className="left">
-          <ul className="relative">
-            <li
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className="relative"
-            >
-              <Link to="/" className="flex items-center">
-                USD <DownIcon className="mt-[3px] text-base" />
-              </Link>
-              <div
-                className={`absolute top-full left-0 mt-2 w-[170px] bg-white  shadow-lg transition-transform duration-1000 ${
-                  isHovered ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-                }`}
-                style={{ transformOrigin: "40px 80px" }}
-              >
-                <Link to="/" className="block px-4 py-2 hover:bg-gray-200">
-                  USD
-                </Link>
-                <Link to="/" className="block px-4 py-2 hover:bg-gray-200">
-                  Euro
-                </Link>
-                <Link to="/" className="block px-4 py-2 hover:bg-gray-200">
-                  AZN
-                </Link>
-              </div>
-            </li>
-          </ul>
+        <Flex  gap={10} >
+          
+          <MoneyHover/>
 
           <div className="text-[#e3e3e3]">|</div>
           <Link to="/">My Account</Link>

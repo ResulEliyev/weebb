@@ -1,0 +1,138 @@
+.kele:hover {
+
+    .uleli {
+        opacity: 1;
+        font-size: 25px;
+
+        /* li{
+                position: relative;
+                &::hover{
+                    color: red;
+                }
+            } */
+        .four {
+            animation: slideRight 1079ms ease-out forwards;
+        }
+
+        .third {
+            animation: slideRight 1080ms ease-out forwards;
+        }
+
+        li,button{
+            padding: 10px;
+            background-color: white;
+            border-radius: 50%;
+            animation: slideRight 1050ms ease-out forwards;
+
+            &:hover {
+                background-color: #2a96ff;
+                color: aliceblue;
+
+                transition: 1s ease-in-out;
+
+                .second {
+                    opacity: 1;
+                    transition: 300ms ease-in-out;
+                    margin-bottom: 100px;
+                    transform: translateY(-70% ) ;
+
+
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        width: 15px;
+                        z-index: -1;
+                        height: 15px;
+                        background-color:black;
+                        left: 50%;
+                        bottom: -12px;
+                        transform: translateX(-50% );
+                        rotate: 45deg;
+                    }
+                }
+
+            }
+
+        }
+
+
+        /* &:hover + .second{
+                opacity: 1
+                ;
+            }
+            
+            .second{
+                opacity: 0;
+
+            }
+
+            
+ */
+
+
+        /* .second {
+            padding: 10px;
+            background-color: white;
+            border-radius: 50%;
+            animation: slideRight 1800ms ease-out forwards;
+
+        }
+
+        .third {
+            padding: 10px;
+            background-color: white;
+            border-radius: 50%;
+            animation: slideRight 1900ms ease-out forwards;
+
+        } */
+    }
+
+
+    a {
+        .icon:hover {
+            padding: 20px;
+            background-color: blue;
+            color: white;
+            color: blue;
+            border-radius: 50%;
+            font-size: 25px;
+
+        }
+    }
+
+
+
+
+}
+
+/* @keyframes uleli {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+    
+        100% {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    } */
+
+
+
+
+/* .lele {
+        position: absolute;
+        bottom: 5%;
+        left: 40%;
+        display: flex;
+        gap: 15px;
+    }
+    
+    .lele:hover li {
+        
+        z-index: 40;
+    }
+    
+    .lele li {
+        visibility: hidden;
+    } */

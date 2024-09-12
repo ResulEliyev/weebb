@@ -14,7 +14,7 @@ export default()=>{
             <input
               type="text"
               placeholder="Search here.."
-              className="grow px-[20px] "
+              className="grow px-[20px]  "
             />
             <button>
               <Link to="/">

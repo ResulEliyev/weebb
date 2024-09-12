@@ -1,26 +1,30 @@
-import { Outlet } from "react-router-dom"
-import Header from "../_ui/Header"
+import { Outlet } from "react-router-dom";
 import TopHeader from "../_ui/TopHeader"
-import InsideOverlay from "../HelpersUi/InsideOverlay";
+import Header from "../_ui/Header"
+import Overlay from "../_components/sidebars/Overlay"
 import { useState } from "react";
-import Overlay from "../_components/sidebars/Overlay";
-import Main from "../_ui/Main";
+import InsideOverlay  from "../HelpersUi/InsideOverlay"
+import Footer from "../_main/Footer";
+import ArrowUp from "../_ui/ArrowUp";
+
 
 export default()=>{
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+    const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
     return(
         <>
-        <TopHeader/>
-        <Header setIsOverlayOpen={setIsOverlayOpen} />
+        <TopHeader />
+        <Header setIsOverlayOpen={setIsOverlayOpen}/>
         <Outlet/>
         <Overlay
-        isOpen={isOverlayOpen}
-        onClose={() => setIsOverlayOpen(!isOverlayOpen)}
-      >
-        <InsideOverlay/>
-      </Overlay>
-      <Main/>
+          isOpen={isOverlayOpen}
+          onClose={() => setIsOverlayOpen(!isOverlayOpen)}
+          >
+          <InsideOverlay />
+        </Overlay>
+        <Footer/>
+          <ArrowUp/>
         </>
+
     )
 }

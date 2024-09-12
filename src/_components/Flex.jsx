@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 const flexStyles=(props)=>({
     display:props.inline ? "inline-flex" : "flex",
     justifyContent:props.justifyContent,
@@ -7,18 +9,19 @@ const flexStyles=(props)=>({
 })
 
 
-export default({
+export default forwardRef(({
     justifyContent,
-    alingItems="center",
+    alignItems="center",
     flexDirection,
     gap,
     ...props
-})=>{
+}, ref)=>{
     const AsElement = props.as ?? "div"
     return(
         <AsElement 
+        ref={ref}
         className={props.className}
-        style={flexStyles({justifyContent,alingItems,flexDirection, gap})}
+        style={Object.assign(flexStyles({justifyContent,alignItems,flexDirection, gap}), props.style)}
         onMouseEnter={props.onMouseEnter}
         onMouseLeave={props.onMouseLeave}
         onClick={props.onClick}
@@ -26,4 +29,4 @@ export default({
             {props.children}
         </AsElement>
     );
-};
+});

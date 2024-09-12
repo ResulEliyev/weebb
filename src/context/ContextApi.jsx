@@ -10,13 +10,13 @@
 
 //   const toggle=()=>setShowSearch(!showSearch)
 
-// //   const data = {
-    // search,
+//   const data = {
+//     search,
 //         setSearch,
 //         showSearch,
 //         setShowSearch,
 //         toggle
-// //   };
+//    };
 
 //   return (
 //     <SearchContext.Provider

@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "name": "Protective Gloves",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280358/medq/products-img2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Medical Mask",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img11.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Hearing Aid Device",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img7.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Cosmetic Containers",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280378/medq/products-img5.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Metal Stethoscope",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img8.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Isometric Equipment",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img10.jpg"
+    },
+    {
+      "id": 7,
+      "name": "New Microscope",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280378/medq/products-img6.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Coronavirus Face Mask",
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280293/medq/products-img1.jpg"
+    }
+  ]

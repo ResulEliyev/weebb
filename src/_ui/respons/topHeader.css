@@ -1,0 +1,13 @@
+
+.divStyles{
+
+@media(max-width:990px) {
+        .containerStyle {
+            display: flex;
+            justify-content: space-around;
+            font-size: 13px;
+
+
+        }
+    }
+}

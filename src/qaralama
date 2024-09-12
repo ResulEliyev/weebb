@@ -1,0 +1,264 @@
+// import { NextIcon, PrevIcon } from "../../public/Icons";
+// import Container from "../_components/Container";
+// import Flex from "../_components/Flex";
+// import Heading from "../_components/Heading";
+// import "./imageCarusel.css";
+// import SliderProduct from "../_components/SliderProduct";
+// import { useRef } from "react";
+
+
+
+
+// export default () => {
+
+
+// const sliderRef=useRef(null)
+//   const sliderWidth = 325;
+//   const totalSlider = 8;
+//   let currentPosition = 0;
+
+
+// const changeProduct=()=>{
+//     if(sliderRef.current){
+//         sliderRef.current.style.transition = "2s";
+//         sliderRef.current.transform = `translateX(${currentPosition}px)`;
+        
+
+//     }
+// }
+
+//   const prevBtn = () => {
+//     currentPosition += sliderWidth;
+//     if (currentPosition > 0) {
+//       currentPosition = -(totalSlider - 1) * sliderWidth; 
+//       console.log(prevBtn);
+
+//     }
+//     changeProduct()
+//   };
+
+//   const nextBtn = () => {
+//     currentPosition -= sliderWidth;
+//     if (currentPosition < -(totalSlider - 1) * sliderWidth) {
+//       currentPosition = 0; 
+//       console.log(nextBtn)
+//     }
+//     changeProduct()
+//   };
+
+//   return (
+//     <div className="h-[565px]">
+//       <Container>
+//         <Heading className="mt-[50px]">Best Selling</Heading>
+//         <div className="slider grid grid-cols-4 overflow-hidden relative">
+//           <Flex className="absolute top-[20px] right-[20px]">
+//             <button onClick={prevBtn}>
+//               <PrevIcon className="text-4xl" />
+//             </button>
+
+//             <button onClick={nextBtn}>
+//               <NextIcon className="text-4xl" />
+//             </button>
+//           </Flex>
+
+//           <Flex ref={sliderRef} gap={10}>
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//           </Flex>
+//         </div>
+//       </Container>
+//     </div>
+//   );
+// };
+
+
+// const[index,setIndex]=useState(0)
+// const length = 8
+
+// const handlePrevious=()=>{
+//   const newIndex= index - 1;
+//   setIndex(newIndex < 0 ? length - 1 : newIndex  )
+  
+// }
+// console.log(handlePrevious);
+
+// const handleNext =()=>{
+//   const newIndex = index + 1
+//   setIndex(newIndex >= length ? 0 :newIndex )
+  
+// }
+// console.log(handleNext);
+
+
+
+
+// import { NextIcon, PrevIcon } from "../../public/Icons";
+// import Container from "../_components/Container";
+// import Flex from "../_components/Flex";
+// import Heading from "../_components/Heading";
+// import "./imageCarusel.css";
+// import SliderProduct from "../_components/SliderProduct";
+
+
+// export default () => {
+
+
+
+//   return (
+//     <div className="h-[565px]">
+//       <Container >
+//         <Heading className="mt-[50px]">Best Selling</Heading>
+//         <div className="slider grid grid-cols-4 overflow-hidden relative">
+//           <Flex className="absolute top-[20px] right-[20px]">
+//             <button  >
+//               <PrevIcon className="text-4xl cursor-pointer" />
+//             </button>
+
+//             <button >
+//               <NextIcon className="text-4xl cursor-pointer" />
+//             </button>
+//           </Flex>
+
+         
+//           <Flex  gap={28}
+//           >
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//           </Flex>
+//         </div>
+//       </Container>
+      
+//     </div>
+
+//   );
+// };
+
+
+
+// import { NextIcon, PrevIcon } from "../../public/Icons";
+// import Container from "../_components/Container";
+// import Flex from "../_components/Flex";
+// import Heading from "../_components/Heading";
+// import "./imageCarusel.css";
+// import SliderProduct from "../_components/SliderProduct";
+// import { useState } from "react";
+
+
+
+// export default () => {
+// const[index,setIndex]=useState(0)
+// const length = 8
+
+// const handlePrevious=()=>{
+//   const newIndex= index - 1;
+//   setIndex(newIndex < 0 ? length - 1 : newIndex  )
+//   console.log(handlePrevious);
+  
+// }
+
+// const handleNext =()=>{
+//   const newIndex = index + 1
+//   setIndex(newIndex >= length ? 0 :newIndex )
+//   console.log(handleNext);
+  
+// }
+
+
+//   return (
+//     <div className="h-[565px]">
+//       <Container>
+//         <Heading className="mt-[50px]">Best Selling</Heading>
+//         <div className="slider grid grid-cols-4 overflow-hidden relative">
+//           <Flex className="absolute top-[20px] right-[20px]">
+//             <button onClick={handlePrevious}>
+//               <PrevIcon className="text-4xl" />
+//             </button>
+
+//             <button onClick={handleNext}>
+//               <NextIcon className="text-4xl" />
+//             </button>
+//           </Flex>
+
+//           <Flex gap={10}
+//            className="slider-track  transition-transform duration-300 ease-in-out "
+//            style={{ transform: `translateX(-${index * 500}%)` }}
+          
+//           >
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//             <SliderProduct />
+//           </Flex>
+//         </div>
+//       </Container>
+//     </div>
+//   );
+// };
+
+
+
+// const[index,setIndex]=useState(0)
+
+
+//   const flexRef = useRef()
+//  const length = 8
+
+// console.log(flexRef);
+
+
+
+//  const handlePrevious=()=>{
+//    const newIndex= index - 1;
+//    setIndex(newIndex < 0 ? length - 1 : newIndex  )
+  
+//  }
+
+//  const handleNext =()=>{
+//    const newIndex = index + 1
+//    setIndex(newIndex >= length ? 0 :newIndex )
+// }
+
+
+// <Flex className="absolute top-[20px] right-[20px]">
+// <button onClick={handlePrevious}>
+//   <PrevIcon className="text-4xl"/>
+// </button>
+
+// <button onClick={handleNext}>
+//   <NextIcon className="text-4xl" />
+// </button>
+// </Flex>
+
+
+{/*ref={flexRef}
+            // style={{ transform: `translateX(${index * 500}px)` }}
+    transition-transform duration-300 ease-in-out  */}
+
+
+
+
+
+//     
+// paddin top 70px
+
+
+
+
+
+

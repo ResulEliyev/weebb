@@ -1,0 +1,22 @@
+.content{
+    margin: auto;
+}
+
+.box {
+    height: 120px;
+    width: 110px;
+    padding-top: 20px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-inline: 10px;
+    z-index: 10;
+    .value{
+        font-size: 35px;
+        font-weight: bold;
+    }
+    .label{
+        color: #696969;
+        font-weight: bold;
+        
+    }
+}

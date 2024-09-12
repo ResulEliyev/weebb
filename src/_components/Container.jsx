@@ -7,7 +7,7 @@ export default({children,...props})=>{
     {children}
 </Flex>
     ):(
-        <div>
+        <div className={classes}>
             {children}
         </div>
     );

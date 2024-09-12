@@ -1,0 +1,26 @@
+.important{
+    background-image: url("https://medq-react.envytheme.com/img/hot-deal-bg.jpg");
+    min-width: 100%;
+    max-width:100%;
+    background-size: cover;
+    background-position: center;
+    height: 100dvh;
+}
+
+
+
+.background{
+    font-size: 270px;
+    opacity: .04;
+    position: absolute;
+    left: 5%;
+    /* right: 0; */
+    font-weight: 700;
+    color: black;
+     /* z-index: -1;  */
+     /* top: -35px;  */
+     line-height: 1;
+    /*
+    color: var(--blackColor);
+      */
+}

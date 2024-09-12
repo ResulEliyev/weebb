@@ -1,0 +1,15 @@
+.beforee::before{
+    content:" ";
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #696969;
+}
+
+
+.button{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

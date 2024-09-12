@@ -1,0 +1,46 @@
+/* .swiper-button-next,
+.swiper-button-prev
+{
+    position: absolute;
+    top: 5%;
+    right: 0;
+    
+
+} */
+    /* position: absolute;
+    top: 5%;
+    left: 0;
+} */
+
+.prevNext{
+    position: relative;
+    display: flex;
+    >.swiper-button-next
+    {
+        position: absolute;
+        top: 5%;
+        right: 0;
+        background-color: transparent;
+       border: 1px solid #e4e4e4;
+       transition: 300ms ease-in-out;
+       cursor: pointer !important; 
+        &:hover{
+            background-color: #2A96FF;
+        }
+    
+    } 
+    >.swiper-button-prev{ 
+         position: absolute;
+        top: 5%;
+        left: auto;
+        right: 50px;
+        background-color: transparent;
+        border: 1px solid #e4e4e4;
+        transition: 300ms ease-in-out;
+       cursor: pointer !important;
+
+        &:hover{
+            background-color: #2A96FF;
+        }
+    }
+}
