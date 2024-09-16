@@ -8,9 +8,14 @@ import { useState } from "react";
 import Sidebar from "../_components/sidebars/Sidebar";
 import Wishlist from "../_components/sidebars/Wishlist";
 import NavHover from "../_components/Hovers/NavHover";
+import { useSearch } from "../context/ContextApi";
 
 
-export default ({ isOverlayOpen, setIsOverlayOpen }) => {
+export default ({ isOverlayOpen, setIsOverlayOpen,  }) => {
+
+
+  const { cartCount } = useSearch();
+
 
   const [openSidebar, setOpenSidebar] = useState(false);
 
@@ -66,8 +71,8 @@ export default ({ isOverlayOpen, setIsOverlayOpen }) => {
 
           <button className={button} onClick={getElement}>
             <ShoppIcon className="relative" />
-            <span className=" absolute  -top-[4px]  -right-[4px] text-[10px] bg-red-500 w-[10px]  text-white flex items-center justify-center rounded-full font-bold leading-4 ">
-              0
+            <span className=" absolute  -top-[4px]  -right-[4px] text-[10px] bg-red-500 w-[13px]  text-white flex items-center justify-center rounded-full font-bold leading-4 ">
+              {cartCount}
             </span>
           </button>
 

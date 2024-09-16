@@ -11,7 +11,6 @@ import products from "../_components/DataProduuct/products.json";
 import Flex from "../_components/Flex";
 import { Link } from "react-router-dom";
 import { AddIcon, HeartIcon, SearchIcon } from "../../public/Icons";
-import SliderProduct from "../_components/SliderProduct";
 
 export default () => {
   const  divStyles="  second absolute text-sm whitespace-nowrap -top-[30px] -left-[22px] mb-[10px] bg-black text-white p-[5px] rounded  opacity-0"
@@ -34,10 +33,8 @@ export default () => {
               disableOnInteraction: true,
           }}
       >
-        <SwiperSlide>
-          <SliderProduct/>
-        </SwiperSlide>
-          {/* {products.map((item) => (
+        
+          {products.map((item) => (
         <SwiperSlide key={item.id}>
             <div className="my-[30px]">
               <div className="h-[500px] kele">
@@ -95,7 +92,7 @@ export default () => {
               </div>
             </div>
         </SwiperSlide>
-          ))} */}
+          ))}
       </Swiper>
     </>
   );

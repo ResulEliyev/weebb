@@ -10,12 +10,6 @@ export default function Sidebar({
   const cartClass = `p-[15px] font-bold text-xl z-20  fixed right-0 top-0 h-full w-[320px]
   bg-white shadow-lg transform transition-transform duration-1000 ease-in-out
   ${isOpenSidebar ? "translate-x-0" : "translate-x-full"}`;
-  
-
-
-  
-  
-
 
   return (
     <>

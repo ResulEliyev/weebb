@@ -20,6 +20,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
 import { GiStarFormation } from "react-icons/gi";
+import { IoBodyOutline } from "react-icons/io5";
 
 
 
@@ -46,5 +47,5 @@ export{
     FaPinterest as PinteresIcon,
     FaArrowUp as ArrowUpIcon,
     GiStarFormation as StarICon,
-
+    IoBodyOutline as PersonICon,
 }

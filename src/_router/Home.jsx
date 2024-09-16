@@ -10,6 +10,7 @@ import Doctors from "../_main/Doctors";
 
 
 export default()=>{
+
     return(
     <>
       <SectionSwiper />
@@ -17,7 +18,7 @@ export default()=>{
       <CateqoriesHome/>
       <BestSilller/>
       <MiddleWidget/>
-      <Swiper2/>
+      <Swiper2 />
       <TimeSection/>
       <Drags/>
       <Doctors/>

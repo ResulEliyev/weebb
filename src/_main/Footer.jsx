@@ -158,7 +158,7 @@ export default () => {
               <input
                 type="text"
                 placeholder="Enter your Email adress"
-                className="w-[284px] h-[50px] border rounded px-[8px] hover:border-[#2A96FF] duration-300 "
+                className="input_shadow w-[284px] h-[50px] border rounded px-[8px] hover:border-[#2A96FF] duration-300 "
               />
               
             <button className=" button w-[283px] mt-[12px] h-[50px] p-[11px_25px]  bg-[#2A96FF] rounded  text-white font-semibold hover:bg-white  hover:text-[#333] duration-300 ">Subscribe now</button>

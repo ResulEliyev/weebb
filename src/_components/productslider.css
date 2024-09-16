@@ -18,16 +18,15 @@
             animation: slideRight 1080ms ease-out forwards;
         }
 
-        li,button{
+        button{
             padding: 10px;
-            background-color: white;
+            /* background-color: white; */
             border-radius: 50%;
             animation: slideRight 1050ms ease-out forwards;
 
             &:hover {
                 background-color: #2a96ff;
                 color: aliceblue;
-
                 transition: 1s ease-in-out;
 
                 .second {
@@ -54,6 +53,45 @@
             }
 
         }
+
+        li{
+            padding: 10px;
+            background-color: white;
+            border-radius: 50%;
+            animation: slideRight 1050ms ease-out forwards;
+
+            &:hover {
+                background-color: #2a96ff;
+                color: aliceblue;
+
+                transition: 1s ease-in-out;
+
+                .second {
+                    opacity: 1;
+                    transition: 300ms ease-in-out;
+                    margin-bottom: 100px;
+                    transform: translateY(-70% ) ;
+
+
+
+                    &::after {
+                        content: " ";
+                        position: absolute;
+                        width: 15px;
+                        z-index: -1;
+                        height: 15px;
+                        background-color:black;
+                        left: 50%;
+                        bottom: -12px;
+                        transform: translateX(-50% );
+                        rotate: 45deg;
+                    }
+                }
+
+            }
+
+        }
+
 
 
         /* &:hover + .second{

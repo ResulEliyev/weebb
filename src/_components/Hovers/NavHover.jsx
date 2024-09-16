@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default () => {
   const divStyle =
-    "border-b-2 border-[#e3e3e3] text-[#111111] pb-[8px] mb-[20px]";
+    "border-b-[1px] border-[#e3e3e3] text-[#111111] pb-[8px] mb-[20px] relative  after:absolute after:bottom-0 after:left-0 after:w-[100px] after:bg-[#2A96FF] after:h-[2px]";
   const liStyles = "  flex items-center hover:text-[#2A96FF] duration-300 ";
 
   const [isHovered, setIsHovered] = useState();

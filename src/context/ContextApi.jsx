@@ -1,30 +1,35 @@
-// import { createContext, useContext, useState } from "react";
 
-// const SearchContext = createContext();
-// export const useSearch = () => useContext(SearchContext);
+import { createContext, useContext, useState } from "react";
 
-// export default function SearchProvider({ children }) {
-//   const [search, setSearch] = useState("");
-//   const[showSearch,setShowSearch]=useState(false)
+ const SearchContext = createContext(null);
+export const useSearch = () => useContext(SearchContext);
+
+export default function SearchProvider({ children }) {
+
+ const[cartCount,setCartCount]=useState(0)
 
 
-//   const toggle=()=>setShowSearch(!showSearch)
+//  const existItem = cartList.findIndex((item) => {
+//   return item.id === product.id;
+// });
 
-//   const data = {
-//     search,
-//         setSearch,
-//         showSearch,
-//         setShowSearch,
-//         toggle
-//    };
+const addToCart=()=>{
+  
+  setCartCount((prev)=>prev + 1)
+}
 
-//   return (
-//     <SearchContext.Provider
-//       value={{
-//        data
-//       }}
-//     >
-//       {children}
-//     </SearchContext.Provider>
-//   );
-// }
+
+const data={
+  cartCount,
+  addToCart
+}
+
+
+  return (
+    <SearchContext.Provider
+      value={data}
+    >
+      {children}
+    </SearchContext.Provider>
+  );
+}

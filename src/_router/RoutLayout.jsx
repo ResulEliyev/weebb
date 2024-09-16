@@ -10,12 +10,11 @@ import ArrowUp from "../_ui/ArrowUp";
 
 export default()=>{
     const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-
     return(
         <>
         <TopHeader />
-        <Header setIsOverlayOpen={setIsOverlayOpen}/>
-        <Outlet/>
+        <Header setIsOverlayOpen={setIsOverlayOpen}  />
+        <Outlet />
         <Overlay
           isOpen={isOverlayOpen}
           onClose={() => setIsOverlayOpen(!isOverlayOpen)}
