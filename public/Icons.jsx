@@ -21,7 +21,7 @@ import { FaPinterest } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
 import { GiStarFormation } from "react-icons/gi";
 import { IoBodyOutline } from "react-icons/io5";
-
+import { FaRegTrashAlt } from "react-icons/fa";
 
 
 export{
@@ -48,4 +48,5 @@ export{
     FaArrowUp as ArrowUpIcon,
     GiStarFormation as StarICon,
     IoBodyOutline as PersonICon,
+    FaRegTrashAlt as TrashIcon,
 }

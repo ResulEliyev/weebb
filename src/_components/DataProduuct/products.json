@@ -2,41 +2,52 @@
     {
       "id": 1,
       "name": "Protective Gloves",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280358/medq/products-img2.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280358/medq/products-img2.jpg",
+      "price" : 150.00
+
+
     },
     {
       "id": 2,
       "name": "Medical Mask",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img11.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img11.jpg",
+      "price" : 120.00
+
     },
     {
       "id": 3,
       "name": "Hearing Aid Device",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img7.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img7.jpg",
+      "price" : 100.00
     },
     {
       "id": 4,
       "name": "Cosmetic Containers",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280378/medq/products-img5.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280378/medq/products-img5.jpg",
+      "price" : 100.00
     },
     {
       "id": 5,
       "name": "Metal Stethoscope",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img8.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img8.jpg",
+      "price" : 149.00
     },
     {
       "id": 6,
       "name": "Isometric Equipment",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img10.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280379/medq/products-img10.jpg",
+      "price" : 120.00
     },
     {
       "id": 7,
       "name": "New Microscope",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280378/medq/products-img6.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280378/medq/products-img6.jpg",
+      "price": 150.00
     },
     {
       "id": 8,
       "name": "Coronavirus Face Mask",
-      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280293/medq/products-img1.jpg"
+      "image": "https://res.cloudinary.com/dev-empty/image/upload/v1594280293/medq/products-img1.jpg",
+      "price" : 100.00
     }
   ]

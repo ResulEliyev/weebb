@@ -1,8 +1,5 @@
-import ModalBody from "./ModalBody";
 
-
-
-export default ({ children,  isModal,  setIsModal }) => {
+export default ({ children,  isModal }) => {
   
   
 

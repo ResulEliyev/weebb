@@ -8,14 +8,14 @@ import {
 } from "../../public/Icons";
 import "./productslider.css";
 import products from "../_components/DataProduuct/products.json";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Modal from "./sidebars/Modal";
-import { useSearch } from "../context/ContextApi";
 import ModalBody from "./sidebars/ModalBody";
 import { Link } from "react-router-dom";
 import Button2 from "./Button2";
+import { StoreContext } from "../context/StoreContext";
 
-export default () => {
+export default ({ item }  ) => {
   const starStyles = "text-yellow-400";
   const firstSpan = "text-sm text-[#696969] mr-[5px]";
   const secondSpan = "text-sm text-[#111111] font-bold";
@@ -39,8 +39,17 @@ export default () => {
     setSelectedProduct(item);
     setIsModal(!isModal);
   };
-
-  const { addToCart } = useSearch();
+  const {addToCart}=useContext(StoreContext)
+    const handleFunction=(item)=>{
+      
+  if (!item) {
+      console.error("kele tapilmir");
+      console.log("item",item);
+      
+      return;
+    }
+    addToCart(item)
+    }
 
   return (
     <>
@@ -69,7 +78,8 @@ export default () => {
               <div className="absolute bottom-[8%] left-[25%] opacity-0 uleli">
                 <Flex gap={10} as="ul" className="relative">
                   <li className="first">
-                    <button onClick={addToCart}>
+                  
+                    <button onClick={()=>handleFunction(item)}>
                       <AddIcon className="svg" />
                       <div className={divStyles}>Add to cart</div>
                     </button>
@@ -96,7 +106,7 @@ export default () => {
               <span className="line-through text-[#696969] text-sm font-bold mr-1">
                 $99.23
               </span>
-              <span className="text-[#2a96ff] text-sm font-bold"> %92,15</span>
+              <span className="text-[#2a96ff] text-sm font-bold"> $ {item.price}</span>
             </div>
           </div>
         </div>
