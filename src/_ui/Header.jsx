@@ -13,7 +13,7 @@ import { StoreContext } from "../context/StoreContext";
 
 export default ({ isOverlayOpen, setIsOverlayOpen,  }) => {
 
-  const {products}=useContext(StoreContext)
+  const {product}=useContext(StoreContext)
   // const { cartCount } = useSearch();
 
 
@@ -72,7 +72,7 @@ export default ({ isOverlayOpen, setIsOverlayOpen,  }) => {
           <button className={button} onClick={getElement}>
             <ShoppIcon className="relative" />
             <span className=" absolute  -top-[4px]  -right-[4px] text-[10px] bg-red-500 w-[13px]  text-white flex items-center justify-center rounded-full font-bold leading-4 ">
-              {products.length}
+              {product.length}
             </span>
           </button>
 

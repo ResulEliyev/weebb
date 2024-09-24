@@ -78,7 +78,6 @@ export default ({ item }  ) => {
               <div className="absolute bottom-[8%] left-[25%] opacity-0 uleli">
                 <Flex gap={10} as="ul" className="relative">
                   <li className="first">
-                  
                     <button onClick={()=>handleFunction(item)}>
                       <AddIcon className="svg" />
                       <div className={divStyles}>Add to cart</div>

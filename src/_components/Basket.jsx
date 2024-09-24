@@ -20,8 +20,8 @@ const handleRemove=()=>{
         </div>
 
       <div className="w-1/2 px-5">
-        <p className="text-[17px] font-bold  ">{item.name}</p>
-        <p  className="text-[15px] text-blue-700" >$ {item.price}</p>
+        <p className="text-[17px] font-bold ">{item.name}</p>
+        <p  className="text-[15px] text-gray-500 cursor-pointer" >{item.price}</p>
       </div>
       <button
       onClick={handleRemove}

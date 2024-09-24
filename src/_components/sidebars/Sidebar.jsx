@@ -11,7 +11,9 @@ export default function Sidebar({ isOpenSidebar, onClose }) {
   bg-white shadow-lg transform transition-transform duration-1000 ease-in-out
   ${isOpenSidebar ? "translate-x-0" : "translate-x-full"}`;
 
-  const { products, total } = useContext(StoreContext);
+  const { product, total } = useContext(StoreContext);
+  console.log(product);
+  
 
   return (
     <>
@@ -19,18 +21,19 @@ export default function Sidebar({ isOpenSidebar, onClose }) {
 
       <div className={cartClass}>
         <div>
-          <h2> My Cart({products.length})</h2>
+          <h2> My Cart({product.length})</h2>
         </div>
+        
 
-        {products.map((product, i) => (
-          <Basket key={i} item={product} />
+        {product.map((p, i) => (
+          <Basket key={i} item={p} />
         ))}
         <Flex
           justifyContent={"space-between"}
           className="border border-[#e3e3e3] mt-[20px] p-[10px]"
         >
           <span>Subtotal</span>
-          <span>${total}</span>
+          {/* <span>${total}</span> */}
         </Flex>
 
         <button className="mt-[20px] p-[15px] bg-blue-500 text-white rounded-lg w-full hover:bg-white hover:text-black  transition duration-1000 ease-in-out">

@@ -17,7 +17,7 @@ export const StoreProvider = ({ children }) => {
 
     dispatch({
       type: "add",
-      payload: updatedCart,
+      payload: product,
     });
   };
 
@@ -30,7 +30,7 @@ export const StoreProvider = ({ children }) => {
 
     dispatch({
       type: "remove",
-      payload: updatedCart,
+      payload: product,
     });
   };
 
@@ -55,6 +55,8 @@ export const StoreProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     clearCart,
+    updatedCart: state.products,
+    product: state.products, 
   };
 
   return (
