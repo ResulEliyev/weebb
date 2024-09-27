@@ -4,17 +4,42 @@ import "swiper/css";
 import "swiper/css/navigation";
 import {  Autoplay, Navigation } from "swiper/modules";
 import Container from "../_components/Container";
-// import SliderProduct from "../_components/SliderProduct";
 import Heading from "../_components/Heading";
 import "./imageCarusel.css";
 import products from "../_components/DataProduuct/products.json";
 import Flex from "../_components/Flex";
-import { Link } from "react-router-dom";
-import { AddIcon, HeartIcon, SearchIcon } from "../../public/Icons";
+// import { Link } from "react-router-dom";
+import { AddIcon, HeartIcon, PersonICon, SearchIcon, StarICon } from "../../public/Icons";
+import {  useState } from "react";
+import Modal from "../_components/sidebars/Modal";
+import ModalBody from "../_components/sidebars/ModalBody";
+// import Button2 from "../_components/Button2";
+import { useStore } from "../context/StoreContext";
+import ModalInside from "../_components/sidebars/ModalInside";
 
 export default () => {
-  const  divStyles="  second absolute text-sm whitespace-nowrap -top-[30px] -left-[22px] mb-[10px] bg-black text-white p-[5px] rounded  opacity-0"
 
+  const  divStyles="  second absolute text-sm whitespace-nowrap -top-[30px] -left-[22px] mb-[10px] bg-black text-white p-[5px] rounded  opacity-0"
+  
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModal, setIsModal] = useState(false);
+
+
+  const modalElement = (item) => {
+    setSelectedProduct(item);
+    setIsModal(!isModal);
+  };
+  const {add}=useStore()
+    const handleFunction=(item)=>{
+      
+  if (!item) {
+      console.error("kele tapilmir");
+      console.log("item",item);
+      
+      return;
+    }
+    add(item)
+    }
   return (
     <>
       <Container>
@@ -29,11 +54,10 @@ export default () => {
         modules={[Navigation,Autoplay ]}
           
           autoplay={{
-              delay: 2000,
+              delay: 10000,
               disableOnInteraction: true,
           }}
       >
-        
           {products.map((item) => (
         <SwiperSlide key={item.id}>
             <div className="my-[30px]">
@@ -57,22 +81,22 @@ export default () => {
                   <div className="absolute bottom-[8%] left-[25%] opacity-0 uleli">
                     <Flex gap={10} as="ul" className="relative">
                       <li className="first">
-                        <Link to="/">
+                        <button onClick={() => handleFunction(item)}>
                           <AddIcon className="svg" />
                           <div className={divStyles}>Add To Cart</div>
-                        </Link>
+                        </button>
                       </li>
                       <li className="four">
-                        <Link to="/">
+                        <button>
                           <HeartIcon className="svg" />
                           <div className={divStyles}>Add To Wish</div>
-                        </Link>
+                        </button>
                       </li>
                       <li className="first third">
-                        <Link to="/">
+                        <button onClick={() => modalElement(item)}>
                           <SearchIcon className="svg" />
                           <div className={divStyles}>Quick View</div>
-                        </Link>
+                        </button>
                       </li>
                     </Flex>
                   </div>
@@ -93,11 +117,15 @@ export default () => {
             </div>
         </SwiperSlide>
           ))}
+        {selectedProduct && (
+        <Modal setIsModal={setIsModal} isModal={isModal}>
+          <ModalBody onClose={() => setIsModal(!isModal)}>
+           <ModalInside product={selectedProduct} key={selectedProduct.id}/>
+          </ModalBody>
+        </Modal>
+      )}          
       </Swiper>
     </>
   );
 };
 
-// {products.map((product) => (
-//   <SliderProduct product={product} />
-// ))}

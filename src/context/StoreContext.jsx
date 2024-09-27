@@ -1,65 +1,54 @@
-import { createContext, useEffect, useReducer } from "react";
-import reducer, { initialState } from "./Redux";
+import { useLayoutEffect, createContext, useContext, useState } from "react";
 
-export const StoreContext = createContext();
+const localCart=JSON.parse(localStorage.getItem('cart')) ?? [];
 
-export const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+const StoreContext=createContext({
+  cart: localCart,
+  totalPrice:0,
+  add:()=>{},
+  remove:()=>{},
+})
 
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(state.products));
-    localStorage.setItem("total", JSON.stringify(state.total));
-  }, [state]);
 
-  const addToCart = (product) => {
-    const updatedCart = [...state.products, product];
-    updatePrice(updatedCart);
+export const useStore=()=>useContext(StoreContext);
 
-    dispatch({
-      type: "add",
-      payload: product,
+export default function  StoreProvider({children}){
+  const [cart,setCart]=useState(localCart);
+  const[totalPrice,setTotalPrice]=useState(0);
+
+const addToCart=(item ,quantity = 1)=>{
+  const existItem=cart.findIndex((i)=>i.id===item.id);
+  if(existItem <0 )setCart((state)=>[...state,{...item,quantity}]);
+  else{
+    setCart((state)=>{
+      state[existItem].quantity +=quantity;
+      return [...state];
     });
-  };
-
-  const removeFromCart = (product) => {
-    const updatedCart = state.products.filter(
-      currentProduct => currentProduct.name !== product.name
-    );
-
-    updatePrice(updatedCart);
-
-    dispatch({
-      type: "remove",
-      payload: product,
-    });
-  };
-
-  const updatePrice = (products) => {
-    const total = products.reduce((sum, product) => sum + product.price, 0);
-    
-    dispatch({
-      type: "update",
-      payload: total,
-    });
-  };
-
-  const clearCart = () => {
-    dispatch({
-      type: "clear",
-    });
-  };
-
-  const value = {
-    total: state.total,
-    products: state.products,
-    addToCart,
-    removeFromCart,
-    clearCart,
-    updatedCart: state.products,
-    product: state.products, 
-  };
-
-  return (
-    <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
-  );
+  }
 };
+ const removeItem=(id)=>
+  setCart((state)=>[...state.filter((item)=>item.id !==id)])
+
+const calculateTotalPrice=()=>{
+  let sum = 0
+  cart.forEach(item=> sum +=(item.price *item.quantity ))
+  setTotalPrice(sum)
+};
+useLayoutEffect(()=>{
+  localStorage.setItem("cart",JSON.stringify(cart));
+  calculateTotalPrice()
+},[cart]);
+ return(
+  <StoreContext.Provider 
+  value={{
+    cart,
+    totalPrice,
+    add:addToCart,
+    remove:removeItem
+  }}
+  >
+    {children}
+    </StoreContext.Provider>
+ );
+
+}

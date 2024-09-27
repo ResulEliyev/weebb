@@ -4,16 +4,16 @@ import { HeartIcon, SearchIcon, ShoppIcon } from "../../public/Icons";
 import Flex from "../_components/Flex";
 import HomeHover from "../_components/Hovers/HomeHover";
 import Blog from "../_components/Hovers/Blog";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import Sidebar from "../_components/sidebars/Sidebar";
 import Wishlist from "../_components/sidebars/Wishlist";
 import NavHover from "../_components/Hovers/NavHover";
-import { StoreContext } from "../context/StoreContext";
+import { useStore } from "../context/StoreContext";
 
 
 export default ({ isOverlayOpen, setIsOverlayOpen,  }) => {
 
-  const {product}=useContext(StoreContext)
+  const {cart}=useStore()
   // const { cartCount } = useSearch();
 
 
@@ -72,7 +72,7 @@ export default ({ isOverlayOpen, setIsOverlayOpen,  }) => {
           <button className={button} onClick={getElement}>
             <ShoppIcon className="relative" />
             <span className=" absolute  -top-[4px]  -right-[4px] text-[10px] bg-red-500 w-[13px]  text-white flex items-center justify-center rounded-full font-bold leading-4 ">
-              {product.length}
+              {cart.length}
             </span>
           </button>
 

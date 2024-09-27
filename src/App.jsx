@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import RoutLayout from "./_router/RoutLayout"
 import Home from "./_router/Home"
-import { StoreProvider } from "./context/StoreContext"
+import StoreProvider from "./context/StoreContext"
 export default()=>{
   return(
 <StoreProvider>

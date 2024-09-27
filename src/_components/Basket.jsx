@@ -1,15 +1,13 @@
-import { useContext } from "react";
 import { TrashIcon } from "../../public/Icons";
+import { useStore } from "../context/StoreContext";
 import Flex from "./Flex";
-import { StoreContext } from "../context/StoreContext";
 
 export default ({ item }) => {
 
-
-const{removeFromCart}=useContext(StoreContext)
+const {remove}=useStore()
 
 const handleRemove=()=>{
-    removeFromCart(item)
+  remove(item.id)
 }
 
   return (
@@ -21,7 +19,7 @@ const handleRemove=()=>{
 
       <div className="w-1/2 px-5">
         <p className="text-[17px] font-bold ">{item.name}</p>
-        <p  className="text-[15px] text-gray-500 cursor-pointer" >{item.price}</p>
+        <p  className="text-[15px] text-gray-500 cursor-pointer" >{item.quantity} x $ {item.price}</p>
       </div>
       <button
       onClick={handleRemove}

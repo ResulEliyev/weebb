@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { CloseIcon } from "../../../public/Icons";
 import Flex from "../Flex";
-import { useContext } from "react";
-import { StoreContext } from "../../context/StoreContext";
 import Basket from "../Basket";
+import { useStore } from "../../context/StoreContext";
+
 
 export default function Sidebar({ isOpenSidebar, onClose }) {
   const sidebarClass = "fixed inset-0 bg-black  z-20  bg-opacity-50 ";
@@ -11,8 +11,8 @@ export default function Sidebar({ isOpenSidebar, onClose }) {
   bg-white shadow-lg transform transition-transform duration-1000 ease-in-out
   ${isOpenSidebar ? "translate-x-0" : "translate-x-full"}`;
 
-  const { product, total } = useContext(StoreContext);
-  console.log(product);
+  const {cart, totalPrice} = useStore();
+
   
 
   return (
@@ -21,11 +21,11 @@ export default function Sidebar({ isOpenSidebar, onClose }) {
 
       <div className={cartClass}>
         <div>
-          <h2> My Cart({product.length})</h2>
+          <h2> My Cart({cart.length})</h2>
         </div>
         
 
-        {product.map((p, i) => (
+        {cart.map((p, i) => (
           <Basket key={i} item={p} />
         ))}
         <Flex
@@ -33,7 +33,7 @@ export default function Sidebar({ isOpenSidebar, onClose }) {
           className="border border-[#e3e3e3] mt-[20px] p-[10px]"
         >
           <span>Subtotal</span>
-          {/* <span>${total}</span> */}
+          <span>${totalPrice}</span>
         </Flex>
 
         <button className="mt-[20px] p-[15px] bg-blue-500 text-white rounded-lg w-full hover:bg-white hover:text-black  transition duration-1000 ease-in-out">
