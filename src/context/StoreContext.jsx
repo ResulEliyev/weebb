@@ -18,7 +18,7 @@ export default function  StoreProvider({children}){
 
 const addToCart=(item ,quantity = 1)=>{
   const existItem=cart.findIndex((i)=>i.id===item.id);
-  if(existItem <0 )setCart((state)=>[...state,{...item,quantity}]);
+  if(existItem < 0 ) setCart((state)=>[...state,{...item,quantity}]);
   else{
     setCart((state)=>{
       state[existItem].quantity +=quantity;
@@ -29,16 +29,19 @@ const addToCart=(item ,quantity = 1)=>{
  const removeItem=(id)=>
   setCart((state)=>[...state.filter((item)=>item.id !==id)])
 
+
 const calculateTotalPrice=()=>{
   let sum = 0
-  cart.forEach(item=> sum +=(item.price *item.quantity ))
+  cart.forEach(item=> sum +=(item.price * item.quantity ))
   setTotalPrice(sum)
 };
 useLayoutEffect(()=>{
   localStorage.setItem("cart",JSON.stringify(cart));
   calculateTotalPrice()
 },[cart]);
- return(
+
+return(
+
   <StoreContext.Provider 
   value={{
     cart,

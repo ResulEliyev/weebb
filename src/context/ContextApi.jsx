@@ -14,7 +14,6 @@ export default function SearchProvider({ children }) {
 // });
 
 const addToCart=()=>{
-  
   setCartCount((prev)=>prev + 1)
 }
 

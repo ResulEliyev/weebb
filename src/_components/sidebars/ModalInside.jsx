@@ -4,8 +4,10 @@ import Flex from "../Flex";
 import Button2 from "../Button2";
 import { useState } from "react";
 
+
 export default({product:selectedProduct})=>{
 
+    
     const handleChange = (e) => {
         const value = parseInt(e.target.value, 10);
         setPlus(!isNaN(value) && value >= 1 ? value : 1);
@@ -156,7 +158,7 @@ export default({product:selectedProduct})=>{
           <Flex className=" gap-4 mt-[10px]">
             <button
               onClick={() => setPlus((prev) => Math.max(prev - 1, 1))}
-              className="border w-10 rounded  h-9"
+              className="border    h-9 p  w-[30px]"
             >
               -
             </button>
@@ -177,7 +179,8 @@ export default({product:selectedProduct})=>{
               +
             </button>
 
-            <Button2 className="duration-300" prefikx={<AddIcon/>}>
+            <Button2 
+             className="duration-300" prefikx={<AddIcon/>}>
               Add To Cart
             </Button2>
           </Flex>

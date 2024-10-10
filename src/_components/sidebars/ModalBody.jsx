@@ -10,7 +10,7 @@ export default ({ children, onClose }) => {
       <div className="w-full h-full  absolute z-50" onClick={onClose}></div>
 
       <div
-        className=" firstID w-[900px] h-[550px] bg-white p-[40px] relative z-20 "
+        className=" firstID w-[900px] h-[550px] bg-white p-[40px] relative z-[100] "
         // onClick={(e)=>e.stopPropagation}
       >
         <button

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useStore } from "../context/StoreContext";
-import { AddIcon, HeartIcon, PersonICon, SearchIcon, StarICon } from "../../public/Icons";
+import { AddIcon, HeartIcon, SearchIcon } from "../../public/Icons";
 import Flex from "./Flex";
 import Modal from "./sidebars/Modal";
 import ModalBody from "./sidebars/ModalBody";
@@ -14,12 +14,11 @@ export default({product:item})=>{
     const [isModal, setIsModal] = useState(false);
   
     
-    const [plus, setPlus] = useState(1);
 
-    const handleChange = (e) => {
-      const value = parseInt(e.target.value, 10);
-      setPlus(!isNaN(value) && value >= 1 ? value : 1);
-    };
+    // const handleChange = (e) => {
+    //   const value = parseInt(e.target.value, 10);
+    //   setPlus(!isNaN(value) && value >= 1 ? value : 1);
+    // };
   
     const modalElement = (item) => {
       setSelectedProduct(item);
@@ -28,15 +27,8 @@ export default({product:item})=>{
 
 
     const {add}=useStore()
-    const handleFunction=(item)=>{
-  if (!item) {
-      console.error("kele tapilmir");
-      console.log("item",item);
-      
-      return;
-    }
-    add(item)
-    }
+    const handleFunction= item=>add(item)
+  
 
     const divStyles =
     "  second absolute text-sm whitespace-nowrap -top-[30px] -left-[22px] mb-[10px] bg-black text-white p-[5px] rounded  opacity-0";

@@ -109,7 +109,6 @@ export default () => {
                     $99.23
                   </span>
                   <span className="text-[#2a96ff] text-sm font-bold">
-                    {" "}
                     %92,15
                   </span>
                 </div>
@@ -117,14 +116,15 @@ export default () => {
             </div>
         </SwiperSlide>
           ))}
-        {selectedProduct && (
+        
+      </Swiper>
+      {selectedProduct && (
         <Modal setIsModal={setIsModal} isModal={isModal}>
           <ModalBody onClose={() => setIsModal(!isModal)}>
            <ModalInside product={selectedProduct} key={selectedProduct.id}/>
           </ModalBody>
         </Modal>
       )}          
-      </Swiper>
     </>
   );
 };
