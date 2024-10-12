@@ -7,6 +7,7 @@ const StoreContext=createContext({
   totalPrice:0,
   add:()=>{},
   remove:()=>{},
+  updateQuantity:()=>{},
 })
 
 
@@ -18,7 +19,8 @@ export default function  StoreProvider({children}){
 
 const addToCart=(item ,quantity = 1)=>{
   const existItem=cart.findIndex((i)=>i.id===item.id);
-  if(existItem < 0 ) setCart((state)=>[...state,{...item,quantity}]);
+  if(existItem < 0 ) {
+    setCart((state)=>[...state,{...item,quantity}]);}
   else{
     setCart((state)=>{
       state[existItem].quantity +=quantity;
@@ -26,6 +28,21 @@ const addToCart=(item ,quantity = 1)=>{
     });
   }
 };
+
+
+const updateQuantity = (itemId, quantityChange) => {
+  setCart((state) => {
+    return state.map((item) => {
+      if (item.id === itemId) {
+        const newQuantity = item.quantity + quantityChange;
+        return newQuantity > 0 ? { ...item, quantity: newQuantity } : null; 
+      }
+      return item;
+    }).filter(Boolean); 
+  });
+};
+
+
  const removeItem=(id)=>
   setCart((state)=>[...state.filter((item)=>item.id !==id)])
 
@@ -47,7 +64,8 @@ return(
     cart,
     totalPrice,
     add:addToCart,
-    remove:removeItem
+    remove:removeItem,
+    updateQuantity,
   }}
   >
     {children}
