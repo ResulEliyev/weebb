@@ -1,19 +1,27 @@
 import { Link } from "react-router-dom";
 import { AddIcon, PersonICon, StarICon } from "../../../public/Icons";
-import Flex from "../Flex";
 import Button2 from "../Button2";
 import { useState } from "react";
+import { useStore } from "../../context/StoreContext";
+import Flex from "../Flex";
 
 
 export default({product:selectedProduct})=>{
 
+  const {updateQuantity}=useStore()
     
     const handleChange = (e) => {
         const value = parseInt(e.target.value, 10);
         setPlus(!isNaN(value) && value >= 1 ? value : 1);
       };
 
-    const [plus, setPlus] = useState(1);
+      const handleUpdateQuantity=(type)=>{
+        updateQuantity(selectedProduct.id, type)
+      }
+      
+      
+    // const [plus, setPlus] = useState(1);
+    // selectedProduct.id
   const [selectedCurrency, setSelectedCurrency] = useState(<PersonICon />);
 
   const starStyles = "text-yellow-400";
@@ -21,11 +29,11 @@ export default({product:selectedProduct})=>{
   const secondSpan = "text-sm text-[#111111] font-bold";
   const SizeStyle =
     " text-sm font-bold text-[#858585] border-[1px] border-[#858585]  px-[10px] py-[5px]  hover:text-[#111111]  hover:border-[#111111] duration-300 ";
+
     return(
-        <Flex className="flex-1  ">
+        <Flex className="flex-1">
         <div className=" h-[470px] px-[12px]">
-          <img
-            className="w-full h-full object-cover"
+          <img className="w-full h-full object-cover"
             src={selectedProduct.image}
             alt={selectedProduct.name}
           />
@@ -157,7 +165,8 @@ export default({product:selectedProduct})=>{
 
           <Flex className=" gap-4 mt-[10px]">
             <button
-              onClick={() => setPlus((prev) => Math.max(prev - 1, 1))}
+              onClick={()=>handleUpdateQuantity("minus")}
+              // {() => setPlus((prev) => Math.max(prev - 1, 1))}
               className="border    h-9 p  w-[30px]"
             >
               -
@@ -169,17 +178,18 @@ export default({product:selectedProduct})=>{
               max="100"
               className="border w-10 rounded  h-9 pl-2"
               onChange={handleChange}
-              value={plus}
+              value={selectedProduct.quantity || 1}
             />
             <button
-
-              onClick={() => setPlus((prev) => prev + 1)}
+              onClick={()=>handleUpdateQuantity("plus")}
+              // ={() => setPlus((prev) => prev + 1)}
               className="border w-10 rounded  h-9 text-red-950" 
             >
               +
             </button>
 
             <Button2 
+            onClick={()=>handleUpdateQuantity("add")}
              className="duration-300" prefikx={<AddIcon/>}>
               Add To Cart
             </Button2>

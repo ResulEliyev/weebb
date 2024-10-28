@@ -6,34 +6,35 @@ import { useStore } from "../context/StoreContext";
 
 export default ({product:selectedProduct, prefikx, children }) => {
 
-  const {add}=useStore()
+  const {add,updateQuantity}=useStore()
   const handleFunction=(product)=>{
     console.log(product);
     
+
     if (product) {
         console.error("kele tapilmir");
         console.log("eseb oluram uje",product);
         
-      add(product)
-      toast("salllammmmmm??")
+        updateQuantity(product)
+      
     }
     else {
       console.error("kele tapilmir");
       console.log("eseb oluram uje",product);
-
     }
       }
 
 
 const multiPlay=()=>{
   handleFunction(selectedProduct)
+  toast("Hara Gedrsen Ayeee")
 }
 
   const buttonStyles =
   "buttonStyles bg-[#2A96FF] rounded text-white  p-[11px_22px]  font-semibold hover:bg-white hover:text-black duration-300 cursor-pointer ";
   return (
     <Flex
-      alingItems={"center"}
+      alignItems={"center"}
       gap={10}
       className={buttonStyles}
       onClick={multiPlay}

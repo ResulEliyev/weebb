@@ -19,6 +19,7 @@ export default({product:item})=>{
     //   const value = parseInt(e.target.value, 10);
     //   setPlus(!isNaN(value) && value >= 1 ? value : 1);
     // };
+    
   
     const modalElement = (item) => {
       setSelectedProduct(item);

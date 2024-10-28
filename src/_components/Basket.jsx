@@ -14,16 +14,12 @@ export default ({ item }) => {
     setPlus(!isNaN(value) && value >= 1 ? value : 1);
   };
 
-  const handleUpdateQuantity = (change) => {
-    const newQuantity = plus + change;
-    if (newQuantity > 0) {
-      setPlus(newQuantity);
-      updateQuantity(item.id, change);
-    }
+  const handleUpdateQuantity = (type) => {
+    updateQuantity(item.id, type);
   };
 
-  const [plus, setPlus] = useState(item.quantity);
-  
+  // const [plus, setPlus] = useState(item.quantity);
+
   return (
     <Flex className="flex-row p-2 h-[180px] " alignItems="center" gap={8}>
       <div className="overflow-hidden ">
@@ -38,7 +34,7 @@ export default ({ item }) => {
         <p className="text-[17px] font-bold ">{item.name}</p>
         <Flex className=" gap-4 mt-[10px]">
           <button
-            onClick={() => handleUpdateQuantity(-1)}
+            onClick={() => handleUpdateQuantity('minus')}
             className="border  w-10 px-[16px] rounded  h-9 "
           >
             -
@@ -53,7 +49,7 @@ export default ({ item }) => {
             value={item.quantity}
           />
           <button
-            onClick={() => handleUpdateQuantity(1)}
+            onClick={() => handleUpdateQuantity('plus')}
             className="border w-10 px-[16px] rounded  h-9 text-red-950"
           >
             +
