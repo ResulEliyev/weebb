@@ -7,7 +7,6 @@ import Flex from "../Flex";
 
 
 export default({product:selectedProduct})=>{
-
   const {updateQuantity}=useStore()
     
     const handleChange = (e) => {
@@ -189,6 +188,7 @@ export default({product:selectedProduct})=>{
             </button>
 
             <Button2 
+            product={selectedProduct}
             onClick={()=>handleUpdateQuantity("add")}
              className="duration-300" prefikx={<AddIcon/>}>
               Add To Cart
